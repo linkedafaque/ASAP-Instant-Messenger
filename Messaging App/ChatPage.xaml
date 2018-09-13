@@ -1,0 +1,288 @@
+﻿<phone:PhoneApplicationPage x:Class="Messaging_App.ChatPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
+                            mc:Ignorable="d"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            SupportedOrientations="Portrait"
+                            Orientation="Portrait"
+                          xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                            xmlns:c4fToolkit="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
+                            shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot"
+          Background="Transparent"
+          >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel"
+                    Grid.Row="0"
+                    Margin="12,17,0,28">
+            <TextBlock Text="MessApp"
+                       Style="{StaticResource PhoneTextNormalStyle}" />
+            <StackPanel Orientation="Horizontal">
+                <Border BorderThickness="2"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Margin="10,20,0,0"
+                        Background="SteelBlue">
+                    <Image Width="50"
+                           Height="50"
+                           Stretch="Fill"
+                           Source="{Binding Converter={StaticResource ContactPictureConverter}}" />
+                </Border>
+                <TextBlock Text="{Binding ContactName}"
+                           Margin="12,12,0,0"
+                           Style="{StaticResource PhoneTextTitle1Style}"
+                           FontSize="50" />
+            </StackPanel>
+        </StackPanel>
+
+        <!--<StackPanel x:Name="ContentPanel"
+                    Grid.Row="1"
+                    Margin="12,0,12,0"
+                    Height="Auto">
+            <ListBox x:Name="ChatList"
+                     ItemsSource="{Binding Path=Instance.Messages,Source={StaticResource Binder}}"
+                     Height="{Binding ElementName=ContentPanel,Path=ActualHeight,Mode=OneWay}"
+                     ScrollViewer.ManipulationMode="Control"
+                     >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="456">
+                            <c4fToolkit:ChatBubble Width="340"
+                                                   HorizontalAlignment="{Binding Converter={StaticResource MType},ConverterParameter=align}"
+                                                   Opacity="{Binding Converter={StaticResource MType}}"
+                                                   ChatBubbleDirection="{Binding Converter={StaticResource MType},ConverterParameter=direction}"
+                                                   Margin="0,0,0,20">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Text="{Binding Sender}"></TextBlock>
+                                    <TextBlock Grid.Row="1"
+                                        Text="{Binding Text}"
+                                               TextWrapping="Wrap"
+                                               Width="430"></TextBlock>
+                                        <TextBlock Grid.Row="2"
+                                                   HorizontalAlignment="Right"
+                                                   Text="{Binding SendingTime}"
+                                                   FontSize="20" />
+                                </Grid>
+                            </c4fToolkit:ChatBubble>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>-->
+        <Popup x:Name="popupAddCourse">
+            <Border  BorderThickness="2" 
+        			Margin="25"
+                        
+        			BorderBrush="{StaticResource PhoneForegroundBrush}">
+                <Grid Background="{StaticResource PhoneBackgroundBrush}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox
+        					x:Name="txtCourseDetails"
+        					Grid.ColumnSpan="2"
+        					Text=""
+        					TextWrapping="Wrap"
+        					MaxLength="255"
+        					Width="400"
+        					MinHeight="200"
+        					Margin="10,0" />
+                    <Button
+        					x:Name="SendButton" 
+        					Content="Send" 
+        					Click="sendButton_Click_1"
+        					Grid.Row="1"
+        					Grid.Column="0"
+        					Margin="10,0"
+                            />
+                    <Button
+        					x:Name="cancelButton" 
+        					Content="cancel"   
+        					Click="cancelButton_Click_1"
+        					Grid.Row="1"
+        					Grid.Column="1"
+        					Margin="10,0"
+                            />
+                </Grid>
+            </Border>
+        </Popup>
+
+
+
+        <Popup x:Name="EditPopup">
+            <Border  BorderThickness="2" 
+        			Margin="25"
+                        
+        			BorderBrush="{StaticResource PhoneForegroundBrush}">
+                <Grid Background="{StaticResource PhoneBackgroundBrush}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox
+        					x:Name="edittedMessage"
+        					Grid.ColumnSpan="2"
+        					Text=""
+        					TextWrapping="Wrap"
+        					MaxLength="255"
+        					Width="400"
+        					MinHeight="200"
+        					Margin="10,0" />
+                    <Button
+        					x:Name="edit_Sendbutton" 
+        					Content="Send" 
+        					Click="editsendButton_Click_1"
+        					Grid.Row="1"
+        					Grid.Column="0"
+        					Margin="10,0"
+                            />
+                    <Button
+        					x:Name="edit_cancelbutton" 
+        					Content="cancel"   
+        					Click="editcancelButton_Click_1"
+        					Grid.Row="1"
+        					Grid.Column="1"
+        					Margin="10,0"
+                            />
+                </Grid>
+            </Border>
+        </Popup>
+
+
+
+
+        <StackPanel x:Name="ContentPanel" Grid.Row="2" Margin="12,0,12,0" Height="Auto">
+            
+
+            <ItemsControl x:Name="ChatList"  
+                          
+        		ItemsSource="{Binding Instance.Messages, Source={StaticResource Binder}}"
+        		Height="{Binding ActualHeight, ElementName=ContentPanel, Mode=OneWay}"
+        		ScrollViewer.ManipulationMode="Control"
+        		>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="456">
+                            <c4fToolkit:ChatBubble Width="340" 
+                                                   DoubleTap="ChatList_DoubleTap"
+        						HorizontalAlignment="{Binding ConverterParameter=align, Converter={StaticResource MType}}"  
+        						Opacity="{Binding Converter={StaticResource MType}}" 
+        						ChatBubbleDirection="{Binding ConverterParameter=direction, Converter={StaticResource MType}}" 
+        						Margin="0,0,0,20">
+                                <Grid>
+                                    <toolkit:ContextMenuService.ContextMenu>
+                                        <toolkit:ContextMenu>
+                                            <toolkit:MenuItem Header="edit message"
+                                                              Click="Edit_Click" />
+                                        </toolkit:ContextMenu>
+                                    </toolkit:ContextMenuService.ContextMenu>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Text="{Binding Sender}"/>
+                                    <TextBlock Grid.Row="1"
+        								Text="{Binding Text}"
+        								TextWrapping="Wrap"
+        								Width="Auto"/>
+                                    <TextBlock Grid.Row="2"
+        								HorizontalAlignment="Right"
+        								Text="{Binding SendingTime}"
+        								FontSize="20" />
+                                </Grid>
+                            </c4fToolkit:ChatBubble>
+                        </Grid>
+                    </DataTemplate>
+
+                </ItemsControl.ItemTemplate>
+
+            </ItemsControl>
+
+
+        </StackPanel>
+
+        <StackPanel  Grid.Row="3"
+                     Orientation="Horizontal">
+            <c4fToolkit:ChatBubbleTextBox x:Name="txtMessage"
+                                          Margin="20,16,10,10"
+                                          ChatBubbleDirection="LowerRight"
+                                          Width="340"
+                                          TextWrapping="Wrap" />
+            <Button x:Name="btnSend"
+                    Click="btnSend_Click"
+                    Content="Send">
+            </Button>
+        </StackPanel>
+        
+    </Grid>
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True"
+                              Opacity="1.0"
+                              Mode="Default">
+            <shell:ApplicationBarIconButton Text="location"
+                                            IconUri="/Assets/Tiles/new.png" 
+                                            Click="find_location"/>
+            <shell:ApplicationBarIconButton Text="photo"
+                                            IconUri="/Assets/Tiles/cam.png" />
+            <shell:ApplicationBarIconButton Text="audio"
+                                            IconUri="/Assets/Tiles/mic.png" />
+            <shell:ApplicationBarIconButton Text="video"
+                                            IconUri="/Assets/Tiles/vid.png" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True"
+                              Opacity="1.0"
+                              Mode="Default">
+            <shell:ApplicationBarIconButton Text="location"
+                                            IconUri="/Assets/share.png" 
+                                            />
+            <shell:ApplicationBarIconButton Text="photo"
+                                            IconUri="/Assets/feature.camera.png" />
+            <shell:ApplicationBarIconButton Text="audio"
+                                            IconUri="/Assets/microphone.png" />
+            <shell:ApplicationBarIconButton Text="video"
+                                            IconUri="/Assets/feature.video.png" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="secret message"
+                                              Click="ApplicationBarSecretbutton_Click_1"
+                                              />
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>
+    

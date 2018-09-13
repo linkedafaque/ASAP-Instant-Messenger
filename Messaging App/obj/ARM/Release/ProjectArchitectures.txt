@@ -1,0 +1,1 @@
+C:\Users\microsoft\Downloads\azure\Messaging App\Messaging App\secazure.csproj;arm

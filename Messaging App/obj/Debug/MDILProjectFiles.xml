@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Files>
+  <XAPFiles>
+    <File>resources.pri</File>
+    <File>Messaging App.dll</File>
+    <File>Assets\add.png</File>
+    <File>Assets\AlignmentGrid.png</File>
+    <File>Assets\BadgeLogo.png</File>
+    <File>Assets\Button.png</File>
+    <File>Assets\dp.jpg</File>
+    <File>Assets\Logo.png</File>
+    <File>Assets\SplashScreen.png</File>
+    <File>Assets\SquareTile150x150.png</File>
+    <File>Assets\SquareTile71x71.png</File>
+    <File>Assets\StoreLogo.png</File>
+    <File>Assets\WideLogo.png</File>
+    <File>Assets\Tiles\FlipCycleTileLarge.png</File>
+    <File>Assets\Tiles\FlipCycleTileSmall.png</File>
+    <File>Assets\Tiles\IconicTileMediumLarge.png</File>
+    <File>Assets\Tiles\IconicTileSmall.png</File>
+    <File>ReadMe.Coding4Fun.Toolkit.txt</File>
+    <File>README_FIRST.txt</File>
+    <File>Toolkit.Content\ApplicationBar.Add.png</File>
+    <File>Toolkit.Content\ApplicationBar.Cancel.png</File>
+    <File>Toolkit.Content\ApplicationBar.Check.png</File>
+    <File>Toolkit.Content\ApplicationBar.Delete.png</File>
+    <File>Toolkit.Content\ApplicationBar.Select.png</File>
+    <File>AppManifest.xaml</File>
+    <File>Assets\ApplicationIcon.png</File>
+    <File>Assets\Tiles\FlipCycleTileMedium.png</File>
+    <File>Coding4Fun.Toolkit.Controls.dll</File>
+    <File>Coding4Fun.Toolkit.dll</File>
+    <File>Coding4Fun.Toolkit.Storage.dll</File>
+    <File Type="PCL">Microsoft.Azure.KeyVault.Core.dll</File>
+    <File Type="PCL">Microsoft.Data.Edm.dll</File>
+    <File Type="PCL">Microsoft.Data.OData.dll</File>
+    <File>Microsoft.Phone.Controls.dll</File>
+    <File>Microsoft.Phone.Controls.Toolkit.dll</File>
+    <File Type="PCL">Microsoft.WindowsAzure.Mobile.dll</File>
+    <File>Microsoft.WindowsAzure.Mobile.Ext.dll</File>
+    <File>Microsoft.WindowsAzure.Mobile.UI.dll</File>
+    <File>Microsoft.WindowsAzure.Storage.dll</File>
+    <File Type="PCL">Newtonsoft.Json.dll</File>
+    <File Type="PCL">System.Net.Http.dll</File>
+    <File Type="PCL">System.Net.Http.Extensions.dll</File>
+    <File Type="PCL">System.Net.Http.Primitives.dll</File>
+    <File Type="PCL">System.Spatial.dll</File>
+    <File>Microsoft.Azure.KeyVault.Core.xml</File>
+    <File>Microsoft.Data.Edm.xml</File>
+    <File>Microsoft.Data.OData.xml</File>
+    <File>Microsoft.WindowsAzure.Mobile.xml</File>
+    <File>Microsoft.WindowsAzure.Mobile.Ext.xml</File>
+    <File>Microsoft.WindowsAzure.Mobile.UI.xml</File>
+    <File>Newtonsoft.Json.xml</File>
+    <File>System.Net.Http.xml</File>
+    <File>System.Net.Http.Extensions.xml</File>
+    <File>System.Net.Http.Primitives.xml</File>
+    <File>System.Spatial.xml</File>
+    <File>WMAppManifest.xml</File>
+    <File>AppxManifest.xml</File>
+  </XAPFiles>
+  <APPXFiles />
+</Files>

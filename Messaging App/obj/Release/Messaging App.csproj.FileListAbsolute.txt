@@ -1,0 +1,6 @@
+C:\Users\microsoft\Downloads\azure\Messaging App\Messaging App\obj\Release\App.g.cs
+C:\Users\microsoft\Downloads\azure\Messaging App\Messaging App\obj\Release\MainPage.g.cs
+C:\Users\microsoft\Downloads\azure\Messaging App\Messaging App\obj\Release\ChatPage.g.cs
+C:\Users\microsoft\Downloads\azure\Messaging App\Messaging App\obj\Release\Messaging App.g.resources
+C:\Users\microsoft\Downloads\azure\Messaging App\Messaging App\obj\Release\Messaging_App.Resources.AppResources.resources
+C:\Users\microsoft\Downloads\azure\Messaging App\Messaging App\obj\Release\Messaging App.csproj.GenerateResource.Cache

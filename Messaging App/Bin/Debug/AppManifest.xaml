@@ -1,0 +1,22 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="Messaging App" EntryPointType="Messaging_App.App" RuntimeVersion="6.7.50308.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="Messaging App" Source="Messaging App.dll" />
+    <AssemblyPart x:Name="Coding4Fun.Toolkit.Controls" Source="Coding4Fun.Toolkit.Controls.dll" />
+    <AssemblyPart x:Name="Coding4Fun.Toolkit" Source="Coding4Fun.Toolkit.dll" />
+    <AssemblyPart x:Name="Coding4Fun.Toolkit.Storage" Source="Coding4Fun.Toolkit.Storage.dll" />
+    <AssemblyPart x:Name="Microsoft.Azure.KeyVault.Core" Source="Microsoft.Azure.KeyVault.Core.dll" />
+    <AssemblyPart x:Name="Microsoft.Data.Edm" Source="Microsoft.Data.Edm.dll" />
+    <AssemblyPart x:Name="Microsoft.Data.OData" Source="Microsoft.Data.OData.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls" Source="Microsoft.Phone.Controls.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls.Toolkit" Source="Microsoft.Phone.Controls.Toolkit.dll" />
+    <AssemblyPart x:Name="Microsoft.WindowsAzure.Mobile" Source="Microsoft.WindowsAzure.Mobile.dll" />
+    <AssemblyPart x:Name="Microsoft.WindowsAzure.Mobile.Ext" Source="Microsoft.WindowsAzure.Mobile.Ext.dll" />
+    <AssemblyPart x:Name="Microsoft.WindowsAzure.Mobile.UI" Source="Microsoft.WindowsAzure.Mobile.UI.dll" />
+    <AssemblyPart x:Name="Microsoft.WindowsAzure.Storage" Source="Microsoft.WindowsAzure.Storage.dll" />
+    <AssemblyPart x:Name="Newtonsoft.Json" Source="Newtonsoft.Json.dll" />
+    <AssemblyPart x:Name="System.Net.Http" Source="System.Net.Http.dll" />
+    <AssemblyPart x:Name="System.Net.Http.Extensions" Source="System.Net.Http.Extensions.dll" />
+    <AssemblyPart x:Name="System.Net.Http.Primitives" Source="System.Net.Http.Primitives.dll" />
+    <AssemblyPart x:Name="System.Spatial" Source="System.Spatial.dll" />
+  </Deployment.Parts>
+</Deployment>
